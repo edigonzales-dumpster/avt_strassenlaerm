@@ -1,0 +1,156 @@
+INTERLIS 2.3;
+
+/** !!------------------------------------------------------------------------------
+ * !! Version    | wer | Änderung
+ *  !!------------------------------------------------------------------------------ 
+ * !! 2018-11-22 | XX  | Initialversion
+ */
+!!@ technicalContact=mailto:agi@bd.so.ch
+MODEL SO_AVT_LBK_Haupt_uebrigeStrassen_LV95_V1 (de)
+AT "http://www.geo.so.ch/models/AVT"
+VERSION "2018-11-22"  =
+  IMPORTS GeometryCHLV95_V1,CHAdminCodes_V1,LBK_Haupt_uebrigeStrassen_LV95_V1_1,LBK_Haupt_uebrigeStrassen_Codelisten_V1_1;
+
+  /*TOPIC Kataloge =
+  
+    CLASS Beschreibung_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      Beschreibung_DE : MANDATORY TEXT;
+      Beschreibung_LA : TEXT;
+    END Beschreibung_Catalogue;
+	
+    STRUCTURE Beschreibung_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Beschreibung_Catalogue;
+    END Beschreibung_CatRef;
+	
+  END Kataloge;*/
+  
+  TOPIC Emission_Strasse
+  EXTENDS LBK_Haupt_uebrigeStrassen_LV95_V1_1.Emission_Strasse =
+    DEPENDS ON LBK_Haupt_uebrigeStrassen_Codelisten_V1_1.Codelisten;
+
+    CLASS inputdata_EsonROAD_SO
+    EXTENDS LBK_Haupt_uebrigeStrassen_LV95_V1_1.Emission_Strasse.inputdata_EsonROAD =
+    END inputdata_EsonROAD_SO;
+
+    CLASS inputdata_EStl86_SO
+    EXTENDS LBK_Haupt_uebrigeStrassen_LV95_V1_1.Emission_Strasse.inputdata_EStl86 =
+    END inputdata_EStl86_SO;
+
+    CLASS inputdata_Estreet_SO
+    EXTENDS LBK_Haupt_uebrigeStrassen_LV95_V1_1.Emission_Strasse.inputdata_Estreet =
+    END inputdata_Estreet_SO;
+
+    CLASS inputdata_tram (EXTENDED) =
+    END inputdata_tram;
+
+    CLASS streetemission (EXTENDED) =
+    END streetemission;
+
+  END Emission_Strasse;
+
+  TOPIC Immission_Strasse
+  EXTENDS LBK_Haupt_uebrigeStrassen_LV95_V1_1.Immission_Strasse =
+    DEPENDS ON LBK_Haupt_uebrigeStrassen_Codelisten_V1_1.Codelisten;
+
+    CLASS affected_analysis (EXTENDED) =
+    END affected_analysis;
+
+    CLASS dispersion_calculation (EXTENDED) =
+    END dispersion_calculation;
+
+    CLASS noisebarrier (EXTENDED) =
+    END noisebarrier;
+
+    CLASS pointofdetermination (EXTENDED) =
+	  GW_d : 0 .. 100;
+	  GW_n : 0 .. 100;
+	  beurt : MTEXT;
+	  gemeinde : MTEXT;
+	  parznr : MTEXT;
+	  ES : MTEXT;
+	  inclNS : BOOLEAN;
+    END pointofdetermination;
+
+    ASSOCIATION dispersion_calculation2pointofdetermination(EXTENDED) =
+    END dispersion_calculation2pointofdetermination;
+
+  END Immission_Strasse;
+
+END SO_AVT_LBK_Haupt_uebrigeStrassen_LV95_V1.
+
+
+MODEL SO_AVT_LBK_Haupt_uebrigeStrassen_LV03_V1 (de)
+AT "http://www.geo.so.ch/models/AVT"
+VERSION "2018-11-22"  =
+  IMPORTS GeometryCHLV03_V1,CHAdminCodes_V1,LBK_Haupt_uebrigeStrassen_LV03_V1_1,LBK_Haupt_uebrigeStrassen_Codelisten_V1_1;
+
+  /*TOPIC Kataloge =
+  
+    CLASS Beschreibung_Catalogue
+    EXTENDS CatalogueObjects_V1.Catalogues.Item =
+      Beschreibung_DE : MANDATORY TEXT;
+      Beschreibung_LA : TEXT;
+    END Beschreibung_Catalogue;
+	
+    STRUCTURE Beschreibung_CatRef
+    EXTENDS CatalogueObjects_V1.Catalogues.CatalogueReference =
+      Reference (EXTENDED) : REFERENCE TO (EXTERNAL) Beschreibung_Catalogue;
+    END Beschreibung_CatRef;
+	
+  END Kataloge;*/
+  
+  TOPIC Emission_Strasse
+  EXTENDS LBK_Haupt_uebrigeStrassen_LV03_V1_1.Emission_Strasse =
+    DEPENDS ON LBK_Haupt_uebrigeStrassen_Codelisten_V1_1.Codelisten;
+
+    CLASS inputdata_EsonROAD_SO
+    EXTENDS LBK_Haupt_uebrigeStrassen_LV03_V1_1.Emission_Strasse.inputdata_EsonROAD =
+    END inputdata_EsonROAD_SO;
+
+    CLASS inputdata_EStl86_SO
+    EXTENDS LBK_Haupt_uebrigeStrassen_LV03_V1_1.Emission_Strasse.inputdata_EStl86 =
+    END inputdata_EStl86_SO;
+
+    CLASS inputdata_Estreet_SO
+    EXTENDS LBK_Haupt_uebrigeStrassen_LV03_V1_1.Emission_Strasse.inputdata_Estreet =
+    END inputdata_Estreet_SO;
+
+    CLASS inputdata_tram (EXTENDED) =
+    END inputdata_tram;
+
+    CLASS streetemission (EXTENDED) =
+    END streetemission;
+
+  END Emission_Strasse;
+
+  TOPIC Immission_Strasse
+  EXTENDS LBK_Haupt_uebrigeStrassen_LV03_V1_1.Immission_Strasse =
+    DEPENDS ON LBK_Haupt_uebrigeStrassen_Codelisten_V1_1.Codelisten;
+
+    CLASS affected_analysis (EXTENDED) =
+    END affected_analysis;
+
+    CLASS dispersion_calculation (EXTENDED) =
+    END dispersion_calculation;
+
+    CLASS noisebarrier (EXTENDED) =
+    END noisebarrier;
+
+    CLASS pointofdetermination (EXTENDED) =
+	  GW_d : 0 .. 100;
+	  GW_n : 0 .. 100;
+	  beurt : MTEXT;
+	  gemeinde : MTEXT;
+	  parznr : MTEXT;
+	  ES : MTEXT;
+	  inclNS : BOOLEAN;
+    END pointofdetermination;
+
+    ASSOCIATION dispersion_calculation2pointofdetermination(EXTENDED) =
+    END dispersion_calculation2pointofdetermination;
+
+  END Immission_Strasse;
+
+END SO_AVT_LBK_Haupt_uebrigeStrassen_LV03_V1.

@@ -1,0 +1,52 @@
+INTERLIS 2.3;
+
+/** !!------------------------------------------------------------------------------
+ * !! Version    | wer | Änderung
+ *  !!------------------------------------------------------------------------------ 
+ * !! 2019-03-30 | cst  | Initialversion
+ */
+!!@ technicalContact=mailto:agi@bd.so.ch
+MODEL SO_AVT_Bauvorhaben_LV95_V1 (de)
+AT "http://www.geo.so.ch/models/AVT"
+VERSION "2019-03-30"  =
+  IMPORTS LocalisationCH_V1,GeometryCHLV95_V1;
+  /*Vorlage: MGDM Flachmoore */
+  TOPIC Bauvorhaben_Laerm =
+
+    /* Perimeter Kantonsstrassen */
+    CLASS Bauvorhaben_KS =
+      kritPerimeter : MANDATORY (kritisch_Grenzwerte_ES_I_und_II, kritisch_Grenzwerte_ES_I_bis_III: FINAL);
+	  Geo_Obj : MANDATORY GeometryCHLV95_V1.MultiSurface;
+    END Bauvorhaben_KS;
+	
+	/* Perimeter Nationalstrassen */
+    CLASS Bauvorhaben_NS =
+      kritPerimeter : MANDATORY (Einflussbereich_Nationalstrassen: FINAL);
+	  Geo_Obj : MANDATORY GeometryCHLV95_V1.MultiSurface;
+    END Bauvorhaben_NS;
+
+  END Bauvorhaben_Laerm;
+
+END SO_AVT_Bauvorhaben_LV95_V1.
+
+MODEL SO_AVT_Bauvorhaben_LV03_V1 (de)
+AT "http://www.geo.so.ch/models/AVT"
+VERSION "2019-03-30"  =
+  IMPORTS LocalisationCH_V1,GeometryCHLV03_V1;
+  TOPIC Bauvorhaben_Laerm =
+
+    /* Perimeter Kantonsstrassen */
+    CLASS Bauvorhaben_KS =
+      kritPerimeter : MANDATORY (kritisch_Grenzwerte_ES_I_und_II, kritisch_Grenzwerte_ES_I_bis_III: FINAL);
+	  Geo_Obj : MANDATORY GeometryCHLV03_V1.MultiSurface;
+    END Bauvorhaben_KS;
+	
+	/* Perimeter Nationalstrassen */
+    CLASS Bauvorhaben_NS =
+      kritPerimeter : MANDATORY (Einflussbereich_Nationalstrassen: FINAL);
+	  Geo_Obj : MANDATORY GeometryCHLV03_V1.MultiSurface;
+    END Bauvorhaben_NS;
+
+  END Bauvorhaben_Laerm;
+
+END SO_AVT_Bauvorhaben_LV03_V1.
