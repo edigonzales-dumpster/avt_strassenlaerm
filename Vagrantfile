@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "bento/ubuntu-18.04"
+  config.vm.box = "bento/ubuntu-16.04"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -26,12 +26,12 @@ Vagrant.configure("2") do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # config.vm.network "forwarded_port", guest: 80, host: 8080
-  config.vm.network "forwarded_port", guest: 22, host: 2028, id: 'ssh'
+  config.vm.network "forwarded_port", guest: 22, host: 2027, id: 'ssh'
   
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
-  config.vm.network "private_network", ip: "192.168.50.8"
+  config.vm.network "private_network", ip: "192.168.50.7"
   
   # Create a editlic network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -75,7 +75,7 @@ Vagrant.configure("2") do |config|
     locale-gen de_CH.utf8
     echo "Europe/Zurich" | tee /etc/timezone
     dpkg-reconfigure --frontend noninteractive tzdata
-    echo 'deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main' >> /etc/apt/sources.list.d/pgdg.list
+    echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' >> /etc/apt/sources.list.d/pgdg.list
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -    
     apt-get update
     apt-get install -y postgresql-11 
@@ -119,7 +119,16 @@ Vagrant.configure("2") do |config|
     service postgresql start
     apt-get update
     apt-get upgrade
+    # qgis plus
+    echo 'deb     https://qgis.org/debian-ltr xenial main' | tee /etc/apt/sources.list.d/qgis.list
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-key CAEB3DC3BDF7FB45
+    apt-get update
+    apt-get install -y qgis python-qgis
     apt-get install -y gdal-bin python-gdal
+    add-apt-repository -y ppa:x2go/stable
+    apt-get update
+    apt-get install -y x2goserver x2goserver-xsession
+    apt-get install -y xfce4 xfce4-whiskermenu-plugin xfce4-terminal thunar-archive-plugin gedit
     apt-get install -y xauth zip unzip
     apt-get install -y ifupdown
     apt-get install -y fonts-liberation
