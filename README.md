@@ -39,10 +39,13 @@ java -jar /Users/stefan/apps/ili2pg-4.1.0-20190502.114941-4-bindist/ili2pg-4.1.0
 * pre/postscript.sql (todo)
 * AFU abholen (Modell).
 
-
-Fragen:
+## Fragen
 - AFU: Modell i.O.?
-
+- Karte? Layergrupppe? Facadelayer?
+- Name des Layers:
+  * Kritischer Perimeter -> Kritischer Perimeter (Groblärmkataster) -> Groblärmkataster: Kritischer Perimeter
+- Groblärmkataster:
+  * Attributewerte sehen nicht super schön aus. Problem? Sonst nur Umbau nur wegen dem. Sollten "beautify" nicht Underline wegputzen? Legend steht dann der schöne Namen.
 
 ```
 java -jar /Users/stefan/apps/ili2pg-3.12.2/ili2pg-3.12.2.jar --dbhost 192.168.50.7 --dbdatabase pub --dbusr ddluser --dbpwd ddluser \
