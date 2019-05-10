@@ -4,7 +4,10 @@
 
 Vagrant-Maschine mit PostgreSQL 11 und QGIS 2.18 (Ubuntu 16.04).
 
+x2go: 127.0.0.1:2027 (vagrant/vagrant)
+
 ## Strassenlärm
+- Daten sind öffentlich.
 
 * Pub-Modell erstellen -> Gretl 
 * Es braucht AV-Daten in der DB -> AV-Import muss in Edit-DB vorhanden sein, damit wir es gleich dort machen können. Ggf machen und sagen, dass es dann in 1-2 Monaten soweit ist.
@@ -27,15 +30,19 @@ java -jar /Users/stefan/apps/ili2pg-4.1.0-20190502.114941-4-bindist/ili2pg-4.1.0
 --import models/v2/strassenlaerm_KGDM_20190415.xtf
 ```
 
-
-
-
 ## Groblärmkataster
+- Daten sind öffentlich.
+
 
 * Es gibt nur ein Modell (Edit == Pub). 
 * Datensatz kann direkt nach Pub importiertiert werden (tbd).
 * pre/postscript.sql (todo)
 * AFU abholen (Modell).
+
+
+Fragen:
+- AFU: Modell i.O.?
+
 
 ```
 java -jar /Users/stefan/apps/ili2pg-3.12.2/ili2pg-3.12.2.jar --dbhost 192.168.50.7 --dbdatabase pub --dbusr ddluser --dbpwd ddluser \
