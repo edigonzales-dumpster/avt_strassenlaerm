@@ -1,5 +1,31 @@
 # avt_strassenlaerm
 
+## Groblärmkataster
+
+Befehl lokal:
+```
+java -jar /Users/stefan/apps/ili2pg-3.12.2/ili2pg-3.12.2.jar --dbhost 192.168.50.7 --dbdatabase pub --dbusr ddluser --dbpwd ddluser \
+--schemaimport --dbschema avt_groblaermkataster_pub --models SO_AVT_Groblaermkataster_20190709 \
+--defaultSrsCode 2056 --strokeArcs --createGeomIdx --createFk --createFkIdx --createEnumTabs \
+--beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --nameByTopic \
+--modeldir "http://models.geo.admin.ch;Groblaermkataster/" 
+
+java -jar /Users/stefan/apps/ili2pg-3.12.2/ili2pg-3.12.2.jar --dbhost 192.168.50.7 --dbdatabase pub --dbusr ddluser --dbpwd ddluser \
+--dbschema avt_groblaermkataster_pub --models SO_AVT_Groblaermkataster_20190709 \
+--defaultSrsCode 2056 --strokeArcs --createGeomIdx --createFk --createFkIdx --createEnumTabs \
+--beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --nameByTopic \
+--disableValidation \
+--modeldir "http://models.geo.admin.ch;Groblaermkataster/" --import Groblaermkataster/groblaermkataster_20190709.xtf
+
+
+```
+
+Befehl GDI:
+```
+
+```
+
+
 ## Vagrant
 
 Vagrant-Maschine mit PostgreSQL 11 und QGIS 2.18 (Ubuntu 16.04).
