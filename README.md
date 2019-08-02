@@ -4,6 +4,7 @@
 - Der Gretl-Job kann bereits im Branch getestet werden (wenn die Schemen vorhanden sind auf Integration).
 - QML für Strassenlärm
 - Integration im AGDI
+-  Warten auf Antwort wegen den Attributen `Gemeinde` und `Parzellennummer` im Pub-Modell.
 
 # avt_strassenlaerm
 Die Strassenlärmdaten des AVT werden in einer Datenbank beim AVT in einer Fachanwendung (Firma G+P) bewirtschaftet. Die Daten werden zurzeit nicht im Web GIS des Kantons Solothurn publiziert.
@@ -37,8 +38,7 @@ java -jar /Users/stefan/apps/ili2pg-3.12.2/ili2pg-3.12.2.jar --dbhost 192.168.50
 
 ### Import GDI
 ```
-DBHOST=geodb-t.rootso.org
-java -jar /usr/local/ili2pg-VERSION/ili2pg.jar --dbhost $DBHOST --dbport 5432 --dbdatabase pub --dbusr $USER --dbpwd $(awk -v dbhost=$DBHOST -F ':' '$1~dbhost{print $5}' ~/.pgpass) \
+java -jar /usr/local/ili2pg-3.11.2/ili2pg.jar --dbhost $DBHOST --dbport 5432 --dbdatabase pub --dbusr $USER --dbpwd $(awk -v dbhost=$DBHOST -F ':' '$1~dbhost{print $5}' ~/.pgpass) \
 --schemaimport --dbschema avt_groblaermkataster_pub --models SO_AVT_Groblaermkataster_20190709 \
 --defaultSrsCode 2056 --strokeArcs --createGeomIdx --createFk --createFkIdx --createEnumTabs \
 --beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --nameByTopic \
@@ -127,7 +127,7 @@ Zusätzlich zum Schema anlegen mittels INTERLIS-Modell, muss ein Katalog importi
 ```
 
 ### Publikationsmodell
-Erstellung gemäss Dokument `20190415_Dokumentation_KGDM_Laerm.pdf` Kapitel 1.2. **TODO:** Auf die Attribute `Gemeinde` und `Parzellennummer` wurde verzichtet, da dies einfache und schnell direkt aus dem Web GIS gelesen/eruiert werden kann.
+Erstellung gemäss Dokument `20190415_Dokumentation_KGDM_Laerm.pdf` Kapitel 1.2.
 
 #### Import Entwicklungsdatenbank (vagrant)
 
