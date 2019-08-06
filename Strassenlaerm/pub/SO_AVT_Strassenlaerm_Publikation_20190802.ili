@@ -47,7 +47,7 @@ VERSION "2018-04-30"  =
       Adresse : TEXT*1024;
       /** Laermempfindlichkeitsstufe
        */
-      Empfindlichkeitsstufe : MTEXT;
+      Empfindlichkeitsstufe : TEXT*4;
       /** Wird Nationalstrassenlaerm beruecksichtigt? (ja/nein)
        */
       Nationalstrasse_beruecksichtigt : INTERLIS.BOOLEAN;

@@ -33,7 +33,7 @@ java -jar /Users/stefan/apps/ili2pg-3.12.2/ili2pg-3.12.2.jar --dbhost 192.168.50
 --defaultSrsCode 2056 --strokeArcs --createGeomIdx --createFk --createFkIdx --createEnumTabs \
 --beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --nameByTopic \
 --disableValidation --deleteData \
---modeldir "http://models.geo.admin.ch;Groblaermkataster/" --import Groblaermkataster/groblaermkataster_20190709.xtf
+--modeldir "http://models.geo.admin.ch;Groblaermkataster/" --import Groblaermkataster/groblaermkataster_20190806.xtf
 ```
 
 ### Import GDI
@@ -69,7 +69,7 @@ Polymorphes Schreiben funktioniert nur mit v4.1.0 korrekt. Da wir noch v3.11.x e
 
 ```
 java -jar /Users/stefan/apps/ili2pg-3.11.2/ili2pg.jar --dbhost 192.168.50.7 --dbdatabase edit --dbusr ddluser --dbpwd ddluser \
---dbschema avt_strassenlaerm --models "SO_AVT_Strassenlaerm_20190415;LBK_Haupt_uebrigeStrassen_Codelisten_V1_1" \
+--dbschema avt_strassenlaerm --models "SO_AVT_Strassenlaerm_20190806;LBK_Haupt_uebrigeStrassen_Codelisten_V1_1" \
 --defaultSrsCode 2056 --strokeArcs --createGeomIdx --createFk --createFkIdx --createEnumTabs \
 --beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --nameByTopic \
 --importTid --createBasketCol --createDatasetCol \
@@ -81,16 +81,16 @@ java -jar /Users/stefan/apps/ili2pg-3.11.2/ili2pg.jar --dbhost 192.168.50.7 --db
 --modeldir "http://models.geo.admin.ch;Strassenlaerm/edit" --replace Strassenlaerm/edit/LBK_Haupt_uebrigeStrassen_Catalogues_V1_1.xml
 
 java -jar /Users/stefan/apps/ili2pg-3.11.2/ili2pg.jar --dbhost 192.168.50.7 --dbdatabase edit --dbusr ddluser --dbpwd ddluser \
---dbschema avt_strassenlaerm --models SO_AVT_Strassenlaerm_20190415 \
+--dbschema avt_strassenlaerm --models SO_AVT_Strassenlaerm_20190806 \
 --importTid --dataset data \
---modeldir "http://models.geo.admin.ch;Strassenlaerm/edit" --import Strassenlaerm/edit/strassenlaerm_KGDM_20190704.xtf
+--modeldir "http://models.geo.admin.ch;Strassenlaerm/edit" --import Strassenlaerm/edit/strassenlaerm_KGDM_20190806.xtf
 ```
 
 Der Vollständigkeit halber und für später, hier die Befehle (siehe Unterschiede bei den Parameter) für v4.1.0:
 
 ```
 java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar --dbhost 192.168.50.7 --dbdatabase edit --dbusr ddluser --dbpwd ddluser \
---dbschema avt_strassenlaerm --models "SO_AVT_Strassenlaerm_20190415;LBK_Haupt_uebrigeStrassen_Codelisten_V1_1" \
+--dbschema avt_strassenlaerm --models "SO_AVT_Strassenlaerm_20190806;LBK_Haupt_uebrigeStrassen_Codelisten_V1_1" \
 --defaultSrsCode 2056 --strokeArcs --createGeomIdx --createFk --createFkIdx --createEnumTabs \
 --beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --nameByTopic \
 --createTidCol \
@@ -102,7 +102,7 @@ java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar --dbhost 192.168.50.7
 --modeldir "http://models.geo.admin.ch;Strassenlaerm/edit" --import Strassenlaerm/edit/LBK_Haupt_uebrigeStrassen_Catalogues_V1_1.xml
 
 java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar --dbhost 192.168.50.7 --dbdatabase edit --dbusr ddluser --dbpwd ddluser \
---dbschema avt_strassenlaerm --models SO_AVT_Strassenlaerm_20190415 \
+--dbschema avt_strassenlaerm --models SO_AVT_Strassenlaerm_20190806 \
 --importTid \
 --modeldir "http://models.geo.admin.ch;Strassenlaerm/edit" --import Strassenlaerm/edit/strassenlaerm_KGDM_20190704.xtf
 ```
@@ -110,11 +110,11 @@ java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar --dbhost 192.168.50.7
 Export-Befehl vagrant (KGDM + MGDM):
 ```
 java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar --dbhost 192.168.50.7 --dbdatabase edit --dbusr ddluser --dbpwd ddluser \
---dbschema avt_strassenlaerm --models SO_AVT_Strassenlaerm_20190415 \
+--dbschema avt_strassenlaerm --models SO_AVT_Strassenlaerm_20190806 \
 --modeldir "http://models.geo.admin.ch;Strassenlaerm/edit" --export fubar_kgdm.xtf
 
 java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar --dbhost 192.168.50.7 --dbdatabase edit --dbusr ddluser --dbpwd ddluser \
---dbschema avt_strassenlaerm --models LBK_Haupt_uebrigeStrassen_LV95_V1_1 \
+--dbschema avt_strassenlaerm --models SO_AVT_Strassenlaerm_20190806 \
 --modeldir "http://models.geo.admin.ch;Strassenlaerm/edit" --export fubar_mgdm.xtf
 ```
 

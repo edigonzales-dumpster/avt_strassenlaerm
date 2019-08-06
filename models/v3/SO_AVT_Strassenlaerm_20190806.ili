@@ -4,12 +4,13 @@ INTERLIS 2.3;
  *  !! Version    | wer | Aenderung
  *  !!------------------------------------------------------------------------------ 
  *  !! 2019-04-15 | cst | Initialversion
+ *  !! 2019-08-06 | cst | Attribut empfindlichkeitsstufe neu vom Typ TEXT
  *  !!==============================================================================
  */
 !!@ technicalContact=mailto:agi@bd.so.ch
-MODEL SO_AVT_Strassenlaerm_20190415 (de)
+MODEL SO_AVT_Strassenlaerm_20190806 (de)
 AT "http://www.geo.so.ch/models/AVT"
-VERSION "2019-04-15"  =
+VERSION "2019-08-06"  =
   IMPORTS GeometryCHLV95_V1,CHAdminCodes_V1,LBK_Haupt_uebrigeStrassen_LV95_V1_1,LBK_Haupt_uebrigeStrassen_Codelisten_V1_1;
  
   /** Erweiterung des MGDM-TOPIC um OID-Deklaration. Import aller Klassen ohne weitere Zusaetze.
@@ -53,7 +54,7 @@ VERSION "2019-04-15"  =
 	  grenzwert_nacht : 0 .. 100;
 	  /** Laerm-Empfindlichkeitsstufe
        */
-	  empfindlichkeitsstufe : MTEXT;
+	  empfindlichkeitsstufe : TEXT*4;
 	  /** wird Nationalstrassenlaerm beruecksichtigt (true) oder nicht (false)
        */
 	  inklusive_nationalstrasse : BOOLEAN;
@@ -64,4 +65,4 @@ VERSION "2019-04-15"  =
 
   END Immission_Strasse;
 
-END SO_AVT_Strassenlaerm_20190415.
+END SO_AVT_Strassenlaerm_20190806.
