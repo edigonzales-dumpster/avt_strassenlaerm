@@ -1,10 +1,11 @@
 **TODO:**
-- Definitive Modell(e) in die INTERLIS-Modellablage und Modellablage in Produktion deployen.
 - Nach Anlegen der Schemen kann ein Pullrequest der Jobs erstellt werden.
 - Der Gretl-Job kann bereits im Branch getestet werden (wenn die Schemen vorhanden sind auf Integration).
 - QML für Strassenlärm
 - Integration im AGDI
--  Warten auf Antwort wegen den Attributen `Gemeinde` und `Parzellennummer` im Pub-Modell.
+- Warten auf Antwort wegen den Attributen `Gemeinde` und `Parzellennummer` im Pub-Modell.
+- Mergen der GRETL-Jobs
+- Doku in GRETL-Jobs schreiben
 
 # avt_strassenlaerm
 Die Strassenlärmdaten des AVT werden in einer Datenbank beim AVT in einer Fachanwendung (Firma G+P) bewirtschaftet. Die Daten werden zurzeit nicht im Web GIS des Kantons Solothurn publiziert.

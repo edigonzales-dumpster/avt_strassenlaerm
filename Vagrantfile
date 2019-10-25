@@ -121,7 +121,7 @@ Vagrant.configure("2") do |config|
     apt-get upgrade
     # qgis plus
     echo 'deb     https://qgis.org/debian-ltr xenial main' | tee /etc/apt/sources.list.d/qgis.list
-    apt-key adv --keyserver keyserver.ubuntu.com --recv-key CAEB3DC3BDF7FB45
+    apt-key adv --keyserver keyserver.ubuntu.com --recv-key 51F523511C7028C3
     apt-get update
     apt-get install -y qgis python-qgis
     apt-get install -y gdal-bin python-gdal
